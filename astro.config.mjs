@@ -6,10 +6,11 @@ export default defineConfig({
   base: '/site6',
   integrations: [
     starlight({
+      title: 'Site6',
+      Social: {github: 'https://github.com/ld3z/site6',}
       components: {
         Head: './src/components/Head.astro',
       },
-      title: 'Site6',
     }),
   ],
 });
