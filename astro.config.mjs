@@ -9,7 +9,7 @@ export default defineConfig({
       components: {
         Head: './src/components/Head.astro',
       },
-      title: 'My Docs',
+      title: 'Site6',
     }),
   ],
 });
