@@ -1,13 +1,16 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
+title: Site6
+description: A wide array of guides and resources
 template: splash
 ---
 
-import { LinkCard } from '@astrojs/starlight/components';
+import { Card, CardGrid } from '@astrojs/starlight/components';
 
-<LinkCard
-  title="Preview Open Graph image"
-  description="Preview the Open Graph image generated for this page."
-  href="/site6/og/index.png"
-/>
+<CardGrid stagger>
+  <Card title="Check out the documentation" icon="open-book">
+    Interesting content you want to highlight.
+  </Card>
+  <Card title="Other feature" icon="information">
+    More information you want to share.
+  </Card>
+</CardGrid>
