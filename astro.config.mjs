@@ -7,7 +7,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'Site6',
-      Social: {github: 'https://github.com/ld3z/site6',}
+      social: { github: 'https://github.com/ld3z/site6' }
       components: {
         Head: './src/components/Head.astro',
       },
