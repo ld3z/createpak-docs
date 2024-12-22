@@ -6,7 +6,7 @@ export default defineConfig({
   base: '/site6',
   integrations: [
     starlight({
-      title: 'Site6',
+      title: 'Createpak',
       social: { github: 'https://github.com/ld3z/site6' },
       components: {
         Head: './src/components/Head.astro',
