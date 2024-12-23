@@ -9,11 +9,10 @@ export default defineConfig({
       title: "Createpak",
       customCss: [
         "./src/styles/custom.css",
-        "@fontsource/inter/400.css",
-        "@fontsource/inter/600.css",
+        "@fontsource-variable/inter",
       ],
       social: { github: "https://github.com/ld3z/site6" },
-      logo: { src: "./src/assets/createpak_logo.png", replacesTitle: true },
+      logo: { src: "./src/assets/createpak_logo.webp", replacesTitle: true },
       components: {
         Head: "./src/components/Head.astro",
       },
