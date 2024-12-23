@@ -3,7 +3,7 @@ import starlight from "@astrojs/starlight";
 
 export default defineConfig({
   site: "https://ld3z.github.io",
-  base: "/site6",
+  base: "/createpak-docs",
   integrations: [
     starlight({
       title: "Createpak",
