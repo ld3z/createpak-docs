@@ -9,6 +9,8 @@ There are two versions of the pack:
 - .zip
 - .mrpack
 
+## CurseForge
+
 The .zip is for CurseForge users as it contains a *manifest.json* file like this:
 ```json
 // manifest.json
@@ -43,6 +45,8 @@ The .zip is for CurseForge users as it contains a *manifest.json* file like this
 ```
 
 Which allows for users of CurseForge to easily install the modpack as the manifest contains all of the necessary metadata.
+
+## Modrinth
 
 The .mrpack is for Modrinth users which also contains all of the metadata in order to install it in the Modrinth Launcher.
 
