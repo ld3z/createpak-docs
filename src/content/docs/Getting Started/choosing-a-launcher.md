@@ -1,5 +1,8 @@
 ---
 title: Choosing a Launcher
 description: List of many available Launchers
-draft: true
 ---
+
+# There are many launchers to choose from when playing modded Minecraft
+
+Some options have more functionality than others
