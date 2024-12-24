@@ -54,6 +54,6 @@ The .mrpack is for Modrinth users which also contains all of the metadata in ord
 Note that the modpack will be missing mods on Third-Party launchers (e.x Prism, MultiMC, Technic, etc.) and will need to seek out mods that aren't available to be downloaded by the launcher!
 :::
 
-:::tip[However]
+:::tip[However...]
 Some launchers like Prism do find the mods that aren't available to be downloaded automatically, but instead will tell you to open their mod pages and download them, and put them in the mods folder.
 :::
