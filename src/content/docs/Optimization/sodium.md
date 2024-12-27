@@ -3,7 +3,7 @@ title: Sodium
 description: One of the mods used for optimization of the modpack
 ---
 
-![SodiumLogo](../../assets/sodium-icon.png)
+![SodiumLogo](../../../assets/sodium-icon.png)
 
 Sodium created by CaffineMC is an optimization mod used in this mod pack to help optimize everything about the game.
 
