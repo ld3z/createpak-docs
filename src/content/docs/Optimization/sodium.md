@@ -3,9 +3,13 @@ title: Sodium
 description: One of the mods used for optimization of the modpack
 ---
 
+![SodiumLogo](https://github.com/CaffeineMC/sodium/blob/dev/common/src/main/resources/sodium-icon.png)
+
 Sodium created by CaffineMC is an optimization mod used in this mod pack to help optimize everything about the game.
 
-It is a: powerful rendering engine and optimization mod for the Minecraft client which improves frame rates and reduces micro-stutter, while fixing many graphical issues in Minecraft.
+It is:
+
+> A powerful rendering engine and optimization mod for the Minecraft client which improves frame rates and reduces micro-stutter, while fixing many graphical issues in Minecraft.
 
 ## Links
 
