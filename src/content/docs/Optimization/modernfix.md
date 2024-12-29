@@ -5,7 +5,7 @@ description: One of the mods used for optimization of the modpack
 
 ![ModernFixLogo](../../../assets/modernfixlogo.png)
 
-ModernFix created by embeddedt is an optimization mod used in this mod pack to help optimize everything about the game.
+ModernFix created by *embeddedt* is an optimization mod used in this mod pack to help optimize everything about the game.
 
 It is:
 
