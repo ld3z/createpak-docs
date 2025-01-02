@@ -1,6 +1,6 @@
 ---
 title: Debugify
-description: One of the mods used for optimization of the modpack
+description: One of the mods used for optimization of the modpack that fixes over 70 bugs found on the bug tracker in Minecraft. (and does nothing more!)
 ---
 
 ![DebugifyLogo](https://cdn.modrinth.com/data/QwxR6Gcd/d16ec025a7f2d9908248bb4d1477e3e624a2f17f_96.webp)

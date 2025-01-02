@@ -1,6 +1,6 @@
 ---
 title: Krypton
-description: One of the mods used for optimization of the modpack
+description: Mod that optimizes the Minecraft networking stack.
 ---
 
 ![KryptonLogo](https://cdn.modrinth.com/data/fQEb0iXm/3ea60899d060a9286e03b87bfa9e71d0cbe2dde7_96.webp)
