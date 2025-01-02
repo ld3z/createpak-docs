@@ -30,9 +30,7 @@ The mod replaces/fixes from other mods:
 
 Below, you can find a list of patched Minecraft bugs for 1.20:
 
-# List of Patched Bugs
-
-## Unpatched in vanilla
+## List of Patched Bugs
 
 ### Client Side
 
