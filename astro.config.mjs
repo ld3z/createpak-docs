@@ -4,8 +4,7 @@ import starlight from "@astrojs/starlight";
 import vercel from "@astrojs/vercel";
 
 export default defineConfig({
-  site: "https://ld3z.github.io",
-  base: "/createpak-docs",
+  site: "https://createpak-docs.vercel.app",
 
   integrations: [
     starlight({
@@ -14,7 +13,7 @@ export default defineConfig({
         "./src/styles/custom.css",
         "@fontsource-variable/inter",
       ],
-      social: { github: "https://github.com/ld3z/site6" },
+      social: { github: "https://github.com/ld3z/createpak-docs" },
       logo: { src: "./src/assets/createpak_logo.webp", replacesTitle: true },
       components: {
         Head: "./src/components/Head.astro",
