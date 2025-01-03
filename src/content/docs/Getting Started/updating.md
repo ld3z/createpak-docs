@@ -3,8 +3,6 @@ title: Updating Createpak
 description: Guide on how to update the modpack
 ---
 
-# Updating Createpak
-
 **Guide on how to update the modpack**
 
 ## Introduction
