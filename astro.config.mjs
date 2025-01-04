@@ -13,6 +13,7 @@ export default defineConfig({
     customCss: [
       "./src/styles/custom.css",
       "@fontsource-variable/inter",
+      "./src/styles/inline.css",
     ],
     social: { github: "https://github.com/ld3z/createpak-docs" },
     logo: { src: "./src/assets/createpak_logo.webp", replacesTitle: true },
