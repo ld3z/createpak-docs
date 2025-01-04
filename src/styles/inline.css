@@ -1,7 +1,7 @@
 .sl-markdown-content .inline-icon {
     display: inline-block;
-    vertical-align: baseline;
+    vertical-align: middle;
     line-height: 1;
     font-size: 1em;
-    padding-bottom: 0.05em;
+    padding-bottom: 5em;
   }
