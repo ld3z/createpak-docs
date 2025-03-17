@@ -1,5 +1,5 @@
 {
-  "name": "@example/starlight-basics",
+  "name": "@ld3z/createpak-docs",
   "type": "module",
   "version": "0.0.1",
   "private": true,
@@ -18,6 +18,8 @@
     "@iconify-json/twemoji": "^1.2.2",
     "astro": "^5.5.2",
     "astro-icon": "^1.1.5",
-    "sharp": "^0.32.0"
+    "astro-og-canvas": "^0.7.0",
+    "canvaskit-wasm": "^0.39.1",
+    "sharp": "^0.33.5"
   }
 }
