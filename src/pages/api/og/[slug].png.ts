@@ -1,5 +1,9 @@
 import type { APIRoute } from 'astro';
-import { ImageResponse } from '@vercel/og';
+import satori from 'satori';
+import { Resvg } from '@resvg/resvg-js';
+
+const fontRegular = await fetch('https://rsms.me/inter/font-files/Inter-Regular.woff')
+  .then(res => res.arrayBuffer());
 
 export const GET: APIRoute = async ({ params }) => {
   const slug = params.slug || 'default';
@@ -12,66 +16,41 @@ export const GET: APIRoute = async ({ params }) => {
       .map(word => word.charAt(0).toUpperCase() + word.slice(1))
       .join(' ');
     
-    // Use createElement-style objects instead of JSX
-    const imageResponse = new ImageResponse(
+    const svg = await satori(
       {
         type: 'div',
         props: {
           style: {
-            height: 630,
-            width: 1200,
+            height: '100%',
+            width: '100%',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
             backgroundColor: '#1e293b',
-            fontSize: 32,
-            fontWeight: 'bold',
             color: 'white',
-            padding: '40px 80px',
+            padding: '40px',
           },
           children: [
             {
               type: 'div',
               props: {
-                style: { marginBottom: 40 },
-                children: [
-                  {
-                    type: 'svg',
-                    props: {
-                      width: 120,
-                      height: 120,
-                      viewBox: '0 0 24 24',
-                      fill: 'white',
-                      children: {
-                        type: 'path',
-                        props: {
-                          d: 'M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'
-                        }
-                      }
-                    }
-                  }
-                ]
-              }
-            },
-            {
-              type: 'div',
-              props: {
-                style: { textAlign: 'center', marginBottom: 16 },
-                children: {
-                  type: 'div',
-                  props: {
-                    style: { fontSize: 60, lineHeight: 1.2 },
-                    children: title
-                  }
+                children: title,
+                style: {
+                  fontSize: '60px',
+                  fontWeight: 'bold',
                 }
               }
             },
             {
               type: 'div',
               props: {
-                style: { fontSize: 24, opacity: 0.8, marginTop: 20 },
-                children: 'CreatePak Documentation'
+                children: 'CreatePak Documentation',
+                style: {
+                  marginTop: '20px',
+                  fontSize: '24px',
+                  opacity: 0.8,
+                }
               }
             }
           ]
@@ -80,10 +59,23 @@ export const GET: APIRoute = async ({ params }) => {
       {
         width: 1200,
         height: 630,
-      },
+        fonts: [
+          {
+            name: 'Inter',
+            data: fontRegular,
+            weight: 400,
+            style: 'normal',
+          }
+        ]
+      }
     );
     
-    return new Response(await imageResponse.arrayBuffer(), {
+    // Convert SVG to PNG
+    const resvg = new Resvg(svg);
+    const pngData = resvg.render();
+    const pngBuffer = pngData.asPng();
+    
+    return new Response(pngBuffer, {
       headers: {
         'Content-Type': 'image/png',
         'Cache-Control': 'public, max-age=31536000, immutable'

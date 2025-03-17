@@ -1,4 +1,5 @@
-import { ImageResponse } from '@vercel/og';
+import satori from 'satori';
+import { Resvg } from '@resvg/resvg-js';
 
 interface OgImageOptions {
   title: string;
@@ -12,22 +13,25 @@ export async function generateOgImage({ title, description }: OgImageOptions): P
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ');
 
-  // Create the image using @vercel/og with element objects instead of JSX
-  const imageResponse = new ImageResponse(
+  // Load font
+  const fontRegular = await fetch('https://rsms.me/inter/font-files/Inter-Regular.woff')
+    .then(res => res.arrayBuffer());
+
+  // Generate SVG using Satori
+  const svg = await satori(
     {
       type: 'div',
       props: {
         style: {
-          height: 630,
-          width: 1200,
+          height: '100%',
+          width: '100%',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
           backgroundColor: '#1e293b',
           color: 'white',
-          padding: '40px 80px',
-          fontFamily: 'Inter, system-ui, sans-serif',
+          padding: '40px',
         },
         children: [
           {
@@ -96,27 +100,12 @@ export async function generateOgImage({ title, description }: OgImageOptions): P
     {
       width: 1200,
       height: 630,
-      fonts: [
-        {
-          name: 'Inter',
-          data: await fetchFont('https://rsms.me/inter/font-files/Inter-Regular.woff?v=3.19'),
-          weight: 400,
-          style: 'normal',
-        },
-        {
-          name: 'Inter',
-          data: await fetchFont('https://rsms.me/inter/font-files/Inter-Bold.woff?v=3.19'),
-          weight: 700,
-          style: 'normal',
-        },
-      ],
-    },
+      fonts: [{ name: 'Inter', data: fontRegular, weight: 400, style: 'normal' }]
+    }
   );
   
-  return await imageResponse.arrayBuffer();
-}
-
-async function fetchFont(url: string): Promise<ArrayBuffer> {
-  const response = await fetch(url);
-  return await response.arrayBuffer();
+  // Convert to PNG
+  const resvg = new Resvg(svg);
+  const pngData = resvg.render();
+  return pngData.asPng();
 } 
