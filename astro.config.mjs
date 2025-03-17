@@ -1,13 +1,12 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
-
 import vercel from "@astrojs/vercel";
-
 import icon from "astro-icon";
+import og from '@astrojs/og';
 
 export default defineConfig({
   site: "https://createpak-docs.vercel.app",
-
+  output: "hybrid",
   integrations: [starlight({
     title: "Createpak",
     customCss: [
@@ -22,7 +21,12 @@ export default defineConfig({
     components: {
       Head: "./src/components/Head.astro",
     },
-  }), icon()],
+  }), icon(), og()],
 
-  adapter: vercel(),
+  adapter: vercel({
+    imageService: true,
+    webAnalytics: {
+      enabled: true,
+    },
+  }),
 });
