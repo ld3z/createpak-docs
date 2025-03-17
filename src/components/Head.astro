@@ -14,7 +14,7 @@ try {
     if (id) {
         // Convert the ID to a slug for the API route
         const slug = id.replace(/\.\w+$/, '').replace(/\//g, '-');
-        ogImageUrl = new URL(`/api/og/${slug}.png`, siteUrl);
+        ogImageUrl = new URL(`/api/og/${slug}.png?title=${encodeURIComponent(title)}`, siteUrl);
     } else {
         // Fallback to default OG image
         ogImageUrl = new URL('/api/og/default.png', siteUrl);
