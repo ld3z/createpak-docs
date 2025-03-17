@@ -4,23 +4,23 @@ import Default from '@astrojs/starlight/components/Head.astro';
 // Ensure we have a valid site URL
 const siteUrl = Astro.site || new URL('https://createpak-docs.vercel.app/');
 
-// Get page info to pass to OG image
+// Get page info for OG images
 const { id } = Astro.props;
 const title = Astro.props.entry?.data?.title || 'Documentation';
 
-// Safely generate OG image URL with fallback
+// Generate OG image URL
 let ogImageUrl: URL;
 try {
     if (id) {
         // Convert the ID to a slug for the API route
-        const slug = id.replace(/\.\w+$/, '');
+        const slug = id.replace(/\.\w+$/, '').replace(/\//g, '-');
         ogImageUrl = new URL(`/api/og/${slug}.png`, siteUrl);
     } else {
-        // Fallback to default OG image if no ID is present
+        // Fallback to default OG image
         ogImageUrl = new URL('/api/og/default.png', siteUrl);
     }
 } catch (error) {
-    // If URL construction fails, use default image
+    // If URL construction fails, use default
     ogImageUrl = new URL('/api/og/default.png', siteUrl);
 }
 ---

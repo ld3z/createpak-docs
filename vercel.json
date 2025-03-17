@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "src/pages/api/og/**/*": {
+      "memory": 1024
+    }
+  }
+} 
