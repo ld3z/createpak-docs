@@ -21,7 +21,11 @@
     "astro-icon": "^1.1.5",
     "astro-og-canvas": "^0.7.0",
     "canvaskit-wasm": "^0.39.1",
-    "satori": "^0.12.1",
-    "sharp": "^0.33.5"
+    "satori": "^0.10.0",
+    "sharp": "^0.32.0",
+    "zwitch": "^2.0.4",
+    "hast-util-raw": "^8.0.0",
+    "unified": "^10.1.2",
+    "unist-util-visit": "^4.1.2"
   }
 }

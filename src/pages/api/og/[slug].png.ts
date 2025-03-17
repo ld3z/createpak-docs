@@ -11,8 +11,17 @@ export const GET: APIRoute = async ({ params }) => {
   try {
     // Load font if not already loaded
     if (!interFont) {
-      const fontPath = path.resolve('./public/fonts/Inter-Medium.ttf');
-      interFont = await fs.readFile(fontPath);
+      try {
+        // First try to load from local file
+        const fontPath = path.resolve('./public/fonts/Inter-Medium.ttf');
+        interFont = await fs.readFile(fontPath);
+      } catch (error) {
+        // Fallback to fetching from web
+        console.log('Falling back to web font...');
+        interFont = await fetch(
+          "https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuI6fMZs.woff"
+        ).then(res => res.arrayBuffer());
+      }
     }
 
     const slug = params.slug || 'default';
