@@ -4,21 +4,24 @@ import Default from '@astrojs/starlight/components/Head.astro';
 // Ensure we have a valid site URL
 const siteUrl = Astro.site || new URL('https://createpak-docs.vercel.app/');
 
+// Get page info to pass to OG image
+const { id } = Astro.props;
+const title = Astro.props.entry?.data?.title || 'Documentation';
+
 // Safely generate OG image URL with fallback
 let ogImageUrl: URL;
 try {
-    if (Astro.props.id) {
-        ogImageUrl = new URL(
-            `/og/${Astro.props.id.replace(/\.\w+$/, '.png')}`,
-            siteUrl
-        );
+    if (id) {
+        // Convert the ID to a slug for the API route
+        const slug = id.replace(/\.\w+$/, '');
+        ogImageUrl = new URL(`/api/og/${slug}.png`, siteUrl);
     } else {
         // Fallback to default OG image if no ID is present
-        ogImageUrl = new URL('/og/default.png', siteUrl);
+        ogImageUrl = new URL('/api/og/default.png', siteUrl);
     }
 } catch (error) {
     // If URL construction fails, use default image
-    ogImageUrl = new URL('/og/default.png', siteUrl);
+    ogImageUrl = new URL('/api/og/default.png', siteUrl);
 }
 ---
 
@@ -27,6 +30,7 @@ try {
 
 <!-- Render the Open Graph and Twitter card meta tags -->
 <meta property="og:image" content={ogImageUrl.toString()} />
+<meta property="og:title" content={title} />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
