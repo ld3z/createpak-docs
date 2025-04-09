@@ -17,7 +17,13 @@ export default defineConfig({
         "./src/styles/inline.css",
         "./src/styles/table.css",
       ],
-      social: { github: "https://github.com/ld3z/createpak-docs" },
+      social: [
+        {
+          icon: "github",
+          label: "GitHub",
+          href: "https://github.com/ld3z/createpak-docs",
+        },
+      ],
       logo: { src: "./src/assets/createpak_logo.webp", replacesTitle: true },
       favicon: "/favicon.png",
       components: {
