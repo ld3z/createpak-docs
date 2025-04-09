@@ -17,9 +17,15 @@
     "@iconify-json/simple-icons": "^1.2.31",
     "@iconify-json/twemoji": "^1.2.2",
     "astro": "^5.6.1",
-    "astro-icon": "^1.1.5",
     "astro-og-canvas": "^0.7.0",
     "canvaskit-wasm": "^0.40.0",
     "sharp": "^0.34.1"
+  },
+  "devDependencies": {
+    "@unocss/astro": "^66.1.0-beta.10",
+    "@unocss/preset-icons": "^66.1.0-beta.10",
+    "@unocss/preset-uno": "^66.1.0-beta.10",
+    "unist-util-visit": "^5.0.0",
+    "unocss": "^66.1.0-beta.10"
   }
 }

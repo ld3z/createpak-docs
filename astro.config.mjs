@@ -3,7 +3,8 @@ import starlight from "@astrojs/starlight";
 
 import vercel from "@astrojs/vercel";
 
-import icon from "astro-icon";
+import UnoCSS from "@unocss/astro";
+import remarkIconShorthand from "./emojis.mjs";
 
 export default defineConfig({
   site: "https://createpak-docs.vercel.app",
@@ -30,8 +31,12 @@ export default defineConfig({
         Head: "./src/components/Head.astro",
       },
     }),
-    icon(),
+    UnoCSS(),
   ],
+
+  markdown: {
+    remarkPlugins: [remarkIconShorthand],
+  },
 
   adapter: vercel(),
 });
