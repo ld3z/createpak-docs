@@ -11,21 +11,21 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/starlight": "^0.34.3",
-    "@astrojs/vercel": "^8.1.4",
-    "@fontsource-variable/inter": "^5.2.5",
-    "@iconify-json/simple-icons": "^1.2.36",
-    "@iconify-json/twemoji": "^1.2.2",
-    "astro": "^5.8.0",
+    "@astrojs/starlight": "^0.35.2",
+    "@astrojs/vercel": "^8.2.6",
+    "@fontsource-variable/inter": "^5.2.6",
+    "@iconify-json/simple-icons": "^1.2.47",
+    "@iconify-json/twemoji": "^1.2.4",
+    "astro": "^5.13.2",
     "astro-og-canvas": "^0.7.0",
     "canvaskit-wasm": "^0.40.0",
-    "sharp": "^0.34.2"
+    "sharp": "^0.34.3"
   },
   "devDependencies": {
-    "@unocss/astro": "^66.1.2",
-    "@unocss/preset-icons": "^66.1.2",
-    "@unocss/preset-uno": "^66.1.2",
+    "@unocss/astro": "^66.4.2",
+    "@unocss/preset-icons": "^66.4.2",
+    "@unocss/preset-uno": "^66.4.2",
     "unist-util-visit": "^5.0.0",
-    "unocss": "^66.1.2"
+    "unocss": "^66.4.2"
   }
 }
