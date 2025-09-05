@@ -5,12 +5,14 @@ import vercel from "@astrojs/vercel";
 
 import UnoCSS from "@unocss/astro";
 import remarkIconShorthand from "./emojis.mjs";
+import starlightThemeGalaxy from "starlight-theme-galaxy";
 
 export default defineConfig({
   site: "https://createpak-docs.vercel.app",
 
   integrations: [
     starlight({
+      plugins: [starlightThemeGalaxy()],
       title: "Createpak",
       customCss: [
         "./src/styles/custom.css",
